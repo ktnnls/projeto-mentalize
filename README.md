@@ -37,17 +37,23 @@ O objetivo é conscientizar sobre a importância do **autocuidado e bem-estar em
 - Hospedagem via GitHub Pages  
 - Google Fonts: Roboto e Playfair Display  
 
+<img width="1919" height="1079" alt="Captura de tela 2025-10-02 224725" src="https://github.com/user-attachments/assets/56418e35-22c4-4189-8ca0-369f1635f715" />
+
 ---
 
 ## 🔹 Acesso ao Site
 
 O site está hospedado no GitHub Pages:  
 
-[https://ktnnls.github.io/projeto-mentalize](https://ktnnls.github.io/projeto-mentalize)
+[https://ktnnls.github.io/projeto-mentalize](https://ktnnls.github.io/projeto-mentalize
+
+<img width="1919" height="1079" alt="Captura de tela 2025-10-02 224731" src="https://github.com/user-attachments/assets/f330d7ab-fd5a-4331-b9a0-44df2dfb59fc" />
+
 
 
 ---
 
+<img width="1919" height="1079" alt="Captura de tela 2025-10-02 224735" src="https://github.com/user-attachments/assets/a60b931e-d7ba-44f7-a24c-14bd899dc323" />
 
 
 ---

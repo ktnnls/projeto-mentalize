@@ -45,7 +45,7 @@ O objetivo é conscientizar sobre a importância do **autocuidado e bem-estar em
 
 O site está hospedado no GitHub Pages:  
 
-[https://ktnnls.github.io/projeto-mentalize](https://ktnnls.github.io/projeto-mentalize
+https://ktnnls.github.io/projeto-mentalize
 
 <img width="1919" height="1079" alt="Captura de tela 2025-10-02 224731" src="https://github.com/user-attachments/assets/f330d7ab-fd5a-4331-b9a0-44df2dfb59fc" />
 

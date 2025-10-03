@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentalize - Saúde Mental</title>
+<meta name="description" content="Mentalize: Saúde mental acessível para todos. Dicas, meditação e recursos gratuitos para bem-estar emocional.">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { 
+        background:#FAF8F6; color:#333; line-height:1.6; 
+        font-family: 'Roboto', sans-serif; 
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    header { 
+        background: linear-gradient(135deg, #A8D5BA, #56CCF2);
+        color:white; text-align:center; padding:120px 20px;
+        border-bottom-left-radius:50px; border-bottom-right-radius:50px;
+        background-image: url('https://picsum.photos/1600/400?blur=2');
+        background-size: cover; background-position: center; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    header h1 { font-family: 'Playfair Display', serif; font-size:3.5em; margin-bottom:10px; }
+    header p { font-family: 'Roboto', sans-serif; font-size:1.4em; font-weight:500; margin-bottom:25px; }
+
+    .btn { background:#fff; color:#56CCF2; padding:14px 30px; border-radius:30px; text-decoration:none; font-weight:bold; transition:0.3s; cursor:pointer; }
+    .btn:hover { background:#56CCF2; color:white; transform: scale(1.05); }
+
+    section { padding:80px 20px; max-width:1000px; margin:auto; border-radius:30px; margin-bottom:40px; transition: background 0.3s ease, transform 0.5s ease, opacity 0.5s ease; opacity:0; transform: translateY(50px);}
+    section.visible { opacity:1; transform: translateY(0); }
+    h2 { font-family: 'Playfair Display', serif; text-align:center; margin-bottom:50px; color:#56CCF2; transition: color 0.3s ease; }
+    a { color:#56CCF2; text-decoration:none; transition: color 0.3s ease; }
+    a:hover { color:#A8D5BA; }
+
+    .cards { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+    .card { flex:1 1 250px; padding:25px; border-radius:20px; text-align:center; transition:0.4s ease; cursor:pointer;
+        box-shadow:0 6px 12px rgba(0,0,0,0.1); background: linear-gradient(135deg, #FDE2E2, #FEECE5); 
+        font-family: 'Roboto', sans-serif;
+    }
+    .card:hover { transform: translateY(-10px) scale(1.03); box-shadow:0 15px 25px rgba(0,0,0,0.2); }
+    .card img { width:100%; border-radius:12px; margin-bottom:15px; transition: transform 0.3s ease; }
+    .card:hover img { transform: scale(1.05); }
+
+    #dicas .card { background: linear-gradient(135deg, #CDE4F7, #E8F5FD); }
+    #recursos .card { background: linear-gradient(135deg, #FFF2CC, #FFF9E6); }
+
+    form { display:flex; flex-direction:column; gap:15px; max-width:450px; margin:auto; font-family: 'Roboto', sans-serif; }
+    input, textarea { padding:14px; border-radius:12px; border:1px solid #ccc; width:100%; transition: border 0.3s ease, background 0.3s ease, color 0.3s ease; font-family: 'Roboto', sans-serif; }
+    input:focus, textarea:focus { border-color:#56CCF2; outline:none; }
+    button { background:#56CCF2; color:white; padding:14px; border:none; border-radius:12px; font-weight:bold; cursor:pointer; transition:0.3s; font-family: 'Roboto', sans-serif; }
+    button:hover { background:#A8D5BA; color:white; transform: scale(1.05); }
+
+    footer { text-align:center; padding:40px; background:#333; color:white; margin-top:40px; border-top-left-radius:50px; border-top-right-radius:50px; transition: background 0.3s ease, color 0.3s ease; }
+
+    /* Modo Dark */
+    body.dark {
+        background:#121212;
+        color:#e0e0e0;
+    }
+    body.dark header {
+        background: linear-gradient(135deg, #2A2A2A, #444);
+        color:#e0e0e0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    body.dark h2 { color:#81C784; }
+    body.dark a { color:#81C784; }
+    body.dark a:hover { color:#AED581; }
+    body.dark .card { background: linear-gradient(135deg, #2C2C2C, #3C3C3C); box-shadow:0 6px 12px rgba(0,0,0,0.6); color:#e0e0e0; }
+    body.dark input, body.dark textarea { background:#1E1E1E; color:#e0e0e0; border:1px solid #555; }
+    body.dark button { background:#81C784; color:#121212; }
+    body.dark button:hover { background:#AED581; color:#121212; }
+    body.dark footer { background:#1A1A1A; color:#e0e0e0; }
+
+    @media(max-width:768px){ .cards{flex-direction:column; align-items:center;} }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Mentalize</h1>
+    <p>Cuidar da mente, transformar a vida.</p>
+    <a href="#sobre" class="btn">Saiba Mais</a>
+    <button id="toggleDark" class="btn" style="margin-top:20px;">Modo Dark</button>
+</header>
+
+<section id="sobre" class="fade-section" style="background: linear-gradient(135deg, #D4F4DD, #E6F9F1);">
+    <h2>Sobre o Mentalize</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=1" alt="Práticas de saúde mental">
+            <h3>ODS 3 - Saúde de Qualidade</h3>
+            <p>O Mentalize promove práticas de saúde mental acessíveis para todos. Com exercícios de respiração, meditação e hábitos simples, buscamos reduzir o estresse e aumentar o bem-estar emocional diariamente.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=2" alt="Educação em saúde mental">
+            <h3>ODS 4 - Educação de Qualidade</h3>
+            <p>A educação em saúde mental é essencial para o desenvolvimento pessoal. Oferecemos conteúdos educativos sobre mindfulness, autocuidado e equilíbrio emocional, capacitando pessoas a cuidarem de si mesmas.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=3" alt="Inclusão em saúde mental">
+            <h3>ODS 10 - Redução de Desigualdades</h3>
+            <p>Recursos de saúde mental devem estar disponíveis para todos. Mentalize disponibiliza informações gratuitas, promovendo inclusão e apoio emocional independentemente do contexto social.</p>
+        </div>
+    </div>
+</section>
+
+<section id="dicas" class="fade-section">
+    <h2>Dicas Rápidas</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=4" alt="Exercício de respiração">
+            <h3>Respiração</h3>
+            <p>Dedique 5 minutos do seu dia para exercícios de respiração profunda. Essa prática reduz ansiedade, melhora a concentração e promove equilíbrio emocional.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=5" alt="Meditação guiada">
+            <h3>Meditação</h3>
+            <p>Praticar meditação guiada diariamente ajuda a limpar a mente, reduzir o estresse e fortalecer o bem-estar mental. Comece com 5 a 10 minutos por dia.</p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=6" alt="Autocuidado diário">
+            <h3>Autocuidado</h3>
+            <p>Momentos de lazer e descanso são essenciais. Pequenos hábitos de autocuidado, como caminhar, ler ou ouvir música, fazem grande diferença na saúde mental diária.</p>
+        </div>
+    </div>
+</section>
+
+<section id="recursos" class="fade-section">
+    <h2>Recursos Úteis</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=7" alt="Apoio emocional gratuito CVV">
+            <h3>CVV – 188</h3>
+            <p>Apoio emocional gratuito e confidencial. Ligue para o CVV (188) ou acesse o site para conversar com voluntários treinados e cuidar da sua saúde mental: <a href="https://www.cvv.org.br" target="_blank">Clique aqui</a></p>
+        </div>
+        <div class="card">
+            <img src="https://picsum.photos/400/300?random=8" alt="Cartilha digital de saúde mental">
+            <h3>Cartilha Digital</h3>
+            <p>Baixe nosso guia completo sobre saúde mental e bem-estar: <a href="https://www.canva.com/design/DAFJH2d6WPI/view?utm_content=DAFJH2d6WPI" target="_blank">Clique aqui para baixar</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Cartilha Interativa -->
+<section id="cartilha-interativa" class="fade-section" style="background: linear-gradient(135deg, #E8F9F1, #D4F4DD); padding:60px 20px; border-radius:30px; margin-bottom:40px;">
+  <h2>Cartilha Interativa</h2>
+  <p>Preencha os campos abaixo e veja sua cartilha personalizada:</p>
+
+  <form id="formCartilha" style="max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px;">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="number" id="idade" placeholder="Sua idade" required>
+    <input type="text" id="pratica" placeholder="Sua prática de bem-estar favorita" required>
+    <button type="button" id="gerarTexto">Gerar Cartilha</button>
+  </form>
+
+  <div id="saidaCartilha" style="margin-top:30px; background:#fff; padding:20px; border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.1); transition: background 0.3s ease, color 0.3s ease;">
+    <p>Após preencher o formulário, seu texto personalizado aparecerá aqui!</p>
+  </div>
+</section>
+
+<section id="contato" class="fade-section" style="background: linear-gradient(135deg, #E8DFF5, #F9F1FD);">
+    <h2>Contato / Participe</h2>
+    <p style="text-align:center; margin-bottom:20px;">Queremos ouvir você! Envie sua mensagem, sugestão ou dúvida e participe da nossa comunidade Mentalize. Juntos, podemos cuidar da saúde mental de todos.</p>
+    <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Mensagem" rows="4"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer class="fade-section">
+    <p>&copy; 2025 Mentalize. Todos os direitos reservados - By Luis Oliveira</p>
+</footer>
+
+<script>
+    // Fade-in ao rolar
+    const sections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Modo Dark
+    const toggle = document.getElementById('toggleDark');
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+    });
+
+    // Cartilha Interativa
+    const botao = document.getElementById('gerarTexto');
+    const saida = document.getElementById('saidaCartilha');
+
+    botao.addEventListener('click', () => {
+        const nome = document.getElementById('nome').value.trim();
+        const idade = document.getElementById('idade').value.trim();
+        const pratica = document.getElementById('pratica').value.trim();
+
+        if(!nome || !idade || !pratica){
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        saida.innerHTML = `
+            <h3>Olá, ${nome}!</h3>
+            <p>Você, com ${idade} anos, escolheu a prática de bem-estar: <strong>${pratica}</strong>.</p>
+            <p>Incorporar essa prática diariamente ajudará a reduzir o estresse, melhorar o foco e fortalecer sua saúde mental. Continue explorando nossas dicas e recursos do Mentalize para transformar sua rotina!</p>
+        `;
+    });
+</script>
+
+</body>
+</html>

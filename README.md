@@ -14,6 +14,9 @@ O **Mentalize** é um projeto de extensão acadêmica voltado à **promoção da
 
 O objetivo é conscientizar sobre a importância do **autocuidado e bem-estar emocional**, utilizando conhecimentos em desenvolvimento web aplicados à prática extensionista.
 
+<img width="1919" height="1079" alt="Captura de tela 2025-10-02 224717" src="https://github.com/user-attachments/assets/627ec7f3-3c84-44f3-8f12-f5a8ed13231f" />
+
+
 ---
 
 ## 🔹 Funcionalidades do Site
